@@ -1,7 +1,8 @@
-package com.lyh.dailydialog
+package com.lyh.dailydialog.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lyh.dailydialog.R
 
 class MainActivity : AppCompatActivity() {
 
