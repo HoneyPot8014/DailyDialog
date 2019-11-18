@@ -18,6 +18,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            resValue "string", "deep_affects_api_key", deep_affects_api_key
+        }
         release {
             resValue "string", "deep_affects_api_key", deep_affects_api_key
             minifyEnabled false
