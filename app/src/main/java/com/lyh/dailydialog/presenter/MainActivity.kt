@@ -1,9 +1,9 @@
 package com.lyh.dailydialog.presenter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.lyh.dailydialog.R
-import com.lyh.dailydialog.data.api.emotion.EmotionRequest
+import com.lyh.dailydialog.util.AppContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        EmotionRequest.Builder.setContent("no").build()
+        AppContext.init(application)
+
     }
 }
