@@ -1,13 +1,10 @@
 package com.lyh.dailydialog.data.model
 
 open class IoModel<T> private constructor(
-    @JvmField val status: Status,
-    @JvmField val data: T?,
-    @JvmField val error: Throwable?
+    @JvmField val status: Status = Status.FAILED,
+    @JvmField val data: T? = null,
+    @JvmField val error: Throwable? = null
 ) {
-    enum class Status {
-        SUCCESS, FAILED
-    }
 
     companion object {
 
@@ -16,5 +13,9 @@ open class IoModel<T> private constructor(
 
         @JvmStatic
         fun <T> onFailed(error: Throwable): IoModel<T> = IoModel(Status.FAILED, null, error)
+    }
+
+    enum class Status {
+        SUCCESS, FAILED
     }
 }
