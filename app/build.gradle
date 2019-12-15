@@ -18,7 +18,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            resValue "string", "deep_affects_api_key", deep_affects_api_key
+        }
         release {
+            resValue "string", "deep_affects_api_key", deep_affects_api_key
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -31,16 +35,22 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-
     // navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
     // firebase
     implementation "com.google.firebase:firebase-analytics:$firebase_analytics_version"
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    // coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    // okHttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    // retrofit logging
+    implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_logging_version"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
