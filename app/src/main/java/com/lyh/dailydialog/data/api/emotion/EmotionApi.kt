@@ -6,9 +6,9 @@ import retrofit2.http.*
 
 interface EmotionApi {
 
-    @POST("sync/recognise_emotion")
+    @POST("audio/generic/api/v2/sync/recognise_emotion")
     fun requestAnalyzeEmotion(
-        @Query("apiKey") apiKey: String,
+        @Query("apikey") apiKey: String,
         @Body params: Map<String, String>
     ): Call<Emotion>
 }

@@ -18,11 +18,11 @@ import kotlin.coroutines.suspendCoroutine
 object EmotionApiClient {
 
     private const val baseUrl = "https://proxy.api.deepaffects.com/"
-    private val httpLogginInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
-    }
-    val client = OkHttpClient.Builder()
-        .addInterceptor(httpLogginInterceptor)
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(
+            HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
         .build()
 
     private val retrofit = Retrofit.Builder()
