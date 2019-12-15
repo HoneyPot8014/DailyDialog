@@ -31,7 +31,8 @@ object EmotionApiClient {
                         ?: kotlin.run {
                             it.resume(IoModel.onFailed(FileNotFoundException()))
                             return@suspendCoroutine
-                        }
+                        },
+                    "application/json"
                 ).enqueue(object : Callback<Emotion> {
                     override fun onFailure(call: Call<Emotion>, t: Throwable) {
                         it.resume(IoModel.onFailed(t))

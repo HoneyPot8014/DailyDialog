@@ -1,18 +1,11 @@
 package com.lyh.dailydialog.data.api.emotion
 
-import android.util.Base64
-import com.lyh.dailydialog.data.model.IoModel
-import kotlinx.coroutines.*
-import java.io.File
 import java.io.FileNotFoundException
-import java.io.InputStream
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 class EmotionRequest private constructor() {
 
     companion object {
-        private const val CONTENT = "content"
+        const val CONTENT = "content"
         const val ENCODING = "encoding"
         const val SAMPLE_RATE = "sampleRate"
         const val LANGUAGE_CODE = "languageCode"
@@ -56,25 +49,5 @@ class EmotionRequest private constructor() {
             }
             return EmotionRequest(params)
         }
-
-//        private suspend fun encode(filePath: String): IoModel<String> {
-//            return suspendCoroutine { continuation ->
-//                val file = File(filePath)
-//                val inputStream by lazy {
-//                    file.inputStream()
-//                }
-//                try {
-//                    val encoded = ByteArray(file.length().toInt()).let {
-//                        inputStream.read(it)
-//                        Base64.encodeToString(it, Base64.DEFAULT)
-//                    }
-//                    continuation.resume(IoModel.onSuccess(encoded))
-//                } catch (e: FileNotFoundException) {
-//                    continuation.resume(IoModel.onFailed(e))
-//                } finally {
-//                    inputStream.close()
-//                }
-//            }
-//        }
     }
 }
