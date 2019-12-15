@@ -42,10 +42,14 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$firebase_analytics_version"
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     // coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    // okHttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    // retrofit logging
+    implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_logging_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

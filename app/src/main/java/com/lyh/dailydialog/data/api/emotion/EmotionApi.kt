@@ -9,7 +9,6 @@ interface EmotionApi {
     @POST("sync/recognise_emotion")
     fun requestAnalyzeEmotion(
         @Query("apiKey") apiKey: String,
-        @Body params: Map<String, String>,
-        @Header("content-type") content: String
+        @Body params: Map<String, String>
     ): Call<Emotion>
 }
