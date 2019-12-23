@@ -31,7 +31,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
@@ -52,6 +52,8 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     // retrofit logging
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_logging_version"
+    // aac
+    implementation "androidx.lifecycle:lifecycle-extensions:$aac_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
