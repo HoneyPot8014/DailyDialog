@@ -3,9 +3,7 @@ package com.lyh.dailydialog.presenter.splash
 
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
 import androidx.core.animation.doOnEnd
 import androidx.lifecycle.lifecycleScope

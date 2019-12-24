@@ -1,14 +1,7 @@
 package com.lyh.dailydialog.presenter.base
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
 
 class BaseViewModel : ViewModel() {
-
-    init {
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-    }
 
 }
