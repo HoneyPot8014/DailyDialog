@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DailyDialog</string>
+    <string name="bottom_nav_record">Record</string>
 </resources>
