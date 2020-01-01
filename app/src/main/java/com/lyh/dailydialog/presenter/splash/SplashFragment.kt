@@ -12,7 +12,12 @@ import kotlinx.android.synthetic.main.fragment_splash.*
 
 class SplashFragment : BaseFragment(R.layout.fragment_splash) {
 
-    private val showAnimatorSet = AnimatorSet()
+    companion object {
+        val TAG = this::class.java.name
+    }
+
+    val endAnimationSet = AnimatorSet()
+    private val animatorSet = AnimatorSet()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,13 +30,21 @@ class SplashFragment : BaseFragment(R.layout.fragment_splash) {
             interpolator = AccelerateInterpolator()
         }
 
-        showAnimatorSet.apply {
+        val endSplashAnimator = ValueAnimator.ofFloat(1f, 0f).apply {
+            addUpdateListener {
+                splash_logo.alpha = it.animatedValue as Float
+            }
+            interpolator = AccelerateInterpolator()
+        }
+
+        animatorSet.apply {
             play(splashAnimator).with(splash_emoticon.animatorSet)
             start()
         }
-    }
 
-    fun stopAnimation() {
-        showAnimatorSet.end()
+        endAnimationSet.apply {
+            play(endSplashAnimator).with(splash_emoticon.endIconAnimator)
+            duration = 300
+        }
     }
 }

@@ -25,6 +25,7 @@ class CustomAnimEmoticon(
     private val loveIconAnimator = ValueAnimator.ofFloat(0f, -60f, 0f)
     private val sadIconAnimator = ValueAnimator.ofFloat(0f, -60f, 0f)
     private val surprisedIconAnimator = ValueAnimator.ofFloat(0f, -60f, 0f)
+    val endIconAnimator = ValueAnimator.ofFloat(1f, 0f)
     val animatorSet = AnimatorSet().apply {
         play(happyIconAnimator)
             .with(angryIconAnimator)
@@ -78,6 +79,20 @@ class CustomAnimEmoticon(
             startDelay = 480
             duration = 720
         }
+
+        endIconAnimator.apply {
+            addUpdateListener {
+                (it.animatedValue as Float).let { animAlpha ->
+                    splash_icon_happy.alpha = animAlpha
+                    splash_icon_angry.alpha = animAlpha
+                    splash_icon_love.alpha = animAlpha
+                    splash_icon_sad.alpha = animAlpha
+                    splash_icon_surprised.alpha = animAlpha
+                }
+            }
+            interpolator = AccelerateInterpolator()
+        }
+
         animatorSet.doOnEnd {
             GlobalScope.launch(Dispatchers.Main) {
                 delay(300)
