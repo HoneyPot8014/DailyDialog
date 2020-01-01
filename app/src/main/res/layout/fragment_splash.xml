@@ -17,59 +17,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
-    <ImageView
-        android:id="@+id/splash_icon_happy"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/icon_happy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/splash_icon_angry"
-        app:layout_constraintStart_toStartOf="parent"
+    <com.lyh.dailydialog.presenter.custom.CustomAnimEmoticon
+        android:id="@+id/splash_emoticon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/splash_logo"
-        app:layout_constraintHorizontal_chainStyle="packed"/>
-
-    <ImageView
-        android:id="@+id/splash_icon_angry"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/icon_angry"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/splash_icon_love"
-        app:layout_constraintStart_toEndOf="@id/splash_icon_happy"
-        app:layout_constraintTop_toBottomOf="@id/splash_logo" />
-
-    <ImageView
-        android:id="@+id/splash_icon_love"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/icon_love"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/splash_icon_sad"
-        app:layout_constraintStart_toEndOf="@id/splash_icon_angry"
-        app:layout_constraintTop_toBottomOf="@id/splash_logo" />
-
-    <ImageView
-        android:id="@+id/splash_icon_sad"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/icon_sad"
-        app:layout_constraintBottom_toBottomOf="@id/splash_logo"
-        app:layout_constraintEnd_toStartOf="@id/splash_icon_surprised"
-        app:layout_constraintStart_toEndOf="@id/splash_icon_love"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-    <ImageView
-        android:id="@+id/splash_icon_surprised"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_margin="8dp"
-        android:src="@drawable/icon_surprised"
-        app:layout_constraintBottom_toBottomOf="@id/splash_logo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/splash_icon_sad"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
